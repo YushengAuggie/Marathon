@@ -6,29 +6,44 @@ package marathonRunner;
 
 import java.util.ArrayList;
 
+import javax.management.openmbean.OpenDataException;
+import javax.print.attribute.standard.OutputDeviceAssigned;
+
 public class main {
 
-	/**
-	 * @param args
-	 */
+	
 	public static void main(String[] args) {
 	
-		String filepath = "..\\marathonRunner\\inputFile\\input.txt";
+		String inputfilepath = "..\\marathonRunner\\IOFile\\input1.txt";
+		String outputfilepath = "..\\marathonRunner\\IOFile\\output.txt";
 		getInput ob =new getInput();		
-		ob = ob.getInputFuc(filepath);
+		ob = ob.getInputFuc(inputfilepath);
 		ob.printInfo();
 		//check dimension Node and m
 		nonRecursMarathonRunner marathon = new nonRecursMarathonRunner(ob);
 		Integer numStops = marathon.Bottom_Up_Marathon(marathon.intMileCanRun, marathon.intNumWaterLocation, marathon.arraylist_Distance);
 		
-		if(ob.intNumWaterLocation != ob.arraylist_Distance.size()){
-			System.out.println("Water location number is not equal to distance array dimentsion");
+		ArrayList<Integer> stopWaterLocation = new ArrayList<Integer>();
+		if(ob.intNumWaterLocation+1 != ob.arraylist_Distance.size()){
+			System.out.println("Water location number is not equal to distance array dimentsion-1");
 		}// check input data is valid for this problem
+		
+		
+		stopWaterLocation = marathon.waterLocation;
+		
 		
 		System.out.println("The runner has to stop: ");
 		System.out.print(numStops);
 		System.out.println("  times.");
 		
+		System.out.println("Stop At WaterLocation:");
+		for(Integer i : stopWaterLocation)
+			{
+				System.out.println(i);
+			} //test`
+		
+		outputFile output = new outputFile(outputfilepath,numStops,stopWaterLocation);
+			
 	}
 
 }
