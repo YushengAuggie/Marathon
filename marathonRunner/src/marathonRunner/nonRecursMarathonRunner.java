@@ -21,12 +21,14 @@ public class nonRecursMarathonRunner {
 	
 	public int Bottom_Up_Marathon(int intMileCanRun, int intNumWaterLocation, Integer[] arraylist_Distance){
 		
-		for(int i = 0; i > intNumWaterLocation; i++){
+		for(int i = 0; i < intNumWaterLocation; i++){
+			
 			if(arraylist_Distance[i]>intMileCanRun)
 			{
 				System.out.println("Distance too long, cannot acheive!!");
-				return Integer.MAX_VALUE;
+				return -1;
 			}
+			
 		}
 		
 		Integer[] lookupTableR;
@@ -35,8 +37,9 @@ public class nonRecursMarathonRunner {
 			lookupTableR[i] = Integer.MAX_VALUE;
 		}//initiating look up table
 		
+		lookupTableR[0] = 1; //base case
 		
-		for( int j = 0; j< intNumWaterLocation; j++){
+		for( int j = 1; j< intNumWaterLocation; j++){
 			int i = 0;
 			while((distance(i,j, arraylist_Distance) > intMileCanRun )&&i<j){
 				i++;
@@ -52,7 +55,7 @@ public class nonRecursMarathonRunner {
 		
 		}
 			
-		for(Integer i : lookupTableR){System.out.println(i);} //test
+		//for(Integer i : lookupTableR){System.out.println(i);} //test
 		
 		return lookupTableR[intNumWaterLocation-1];
 	
