@@ -38,28 +38,36 @@ public class nonRecursMarathonRunner {
 		
 		for( int j = 0; j< intNumWaterLocation; j++){
 			int i = 0;
-			while((distance(i,j, arraylist_Distance) <= intMileCanRun )&&i<j){
+			while((distance(i,j, arraylist_Distance) > intMileCanRun )&&i<j){
 				i++;
 			}//find the smallest node can run to j
 		
 			for( int intTemp = i; intTemp < j ; intTemp++ )	{
-				if( lookupTableR[j] <lookupTableR[intTemp]+1){
+				if( lookupTableR[j] >lookupTableR[intTemp]+1){
 	
-					lookupTableR[j] = lookupTableR[i]+1;
+					lookupTableR[j] = lookupTableR[intTemp]+1;
 				
 					}
 				}
-		System.out.println(lookupTableR[intNumWaterLocation]);
+		
 		}
-		return lookupTableR[intNumWaterLocation];
+			
+		for(Integer i : lookupTableR){System.out.println(i);} //test
+		
+		return lookupTableR[intNumWaterLocation-1];
 	
 	}
 		
 	public int distance(int i, int j, Integer[] arraylist_Distance){
 		int dValue = 0;
+		if(i == j){
+			return 0;
+		}
+			
 		for (int n = i+1; n<j;n++)
 		{
 			dValue = arraylist_Distance[n]+ dValue;
+			
 		}
 		return dValue;
 	}
