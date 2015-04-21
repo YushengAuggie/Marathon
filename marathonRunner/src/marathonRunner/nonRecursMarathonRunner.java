@@ -3,7 +3,7 @@ package marathonRunner;
 import java.util.ArrayList;
 
 import javax.xml.transform.Templates;
-
+//find the smallest number of stops through Dynamic programming Bottom Up Table look up 
 
 
 public class nonRecursMarathonRunner {
@@ -37,7 +37,7 @@ public class nonRecursMarathonRunner {
 			lookupTableR[i] = Integer.MAX_VALUE;
 		}//initiating look up table
 		
-		lookupTableR[0] = 1; //base case
+		lookupTableR[0] = 0; //base case
 		
 		for( int j = 1; j< intNumWaterLocation; j++){
 			int i = 0;
@@ -57,7 +57,7 @@ public class nonRecursMarathonRunner {
 			
 		//for(Integer i : lookupTableR){System.out.println(i);} //test
 		
-		return lookupTableR[intNumWaterLocation-1];
+		return lookupTableR[intNumWaterLocation-1]+1;
 	
 	}
 		

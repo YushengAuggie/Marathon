@@ -23,7 +23,7 @@ public class main {
 		
 		if(ob.intNumWaterLocation != ob.arraylist_Distance.size()){
 			System.out.println("Water location number is not equal to distance array dimentsion");
-		}
+		}// check input data is valid for this problem
 		
 		System.out.println("The runner has to stop: ");
 		System.out.print(numStops);
