@@ -12,19 +12,13 @@ public class outputFile {
 	public outputFile(String outputFilepath, Integer numStops,ArrayList<Integer> stopPoints) {
 		 BufferedWriter writer = null;
 	        try {
-	            //create a temporary file
-	            //String timeLog = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-	            //File logFile = new File(inputData.toString());
-
-	            // This will output the full path where the file will be written to...
-	           // System.out.println(logFile.getCanonicalPath());
-
+	            
 	            writer = new BufferedWriter(new FileWriter(outputFilepath));
 	            writer.write(numStops.toString());
 	            String newline = System.getProperty("line.separator");
 	            writer.write(newline);
 	            writer.write(stopPoints.toString());
-	            System.out.println("File Write Success!");
+	            System.out.println("File Write Successful!");
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        } finally {

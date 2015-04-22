@@ -76,7 +76,6 @@ public class nonRecursMarathonRunner {
 		
 		}
 			
-			
 		
 		//for(Integer j : tempArray){System.out.println(j);} //test`	
 		Integer key = key=stopslookUptable.get(intNumWaterLocation+1);
@@ -91,9 +90,6 @@ public class nonRecursMarathonRunner {
 		return lookupTableR[intNumWaterLocation+1]-1;
 	
 	}
-	
-	
-	
 	
 	
 		
