@@ -7,3 +7,6 @@ Input text file named input.txt formatted as follows:
       the third integer is the distance between the second and third water locations,
       …the n-th integer is the distance between the (n-1)-th and n-th water locations, 
       and the last integer is the distance between the final water location and the destination.
+Output text file formatted as follows: 
+(a) The first line should contain the minimum number of stops needed, as determined by your algorithm. 
+(b) The second line should contain k integers, which are the ids of the selected water locations, 1<=k<=n. 
