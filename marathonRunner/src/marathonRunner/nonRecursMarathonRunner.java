@@ -83,11 +83,11 @@ public class nonRecursMarathonRunner {
 		{
 			this.waterLocation.add(key);
 			key=stopslookUptable.get(key);
-		}
+		}//find the water location stops solution
 		
 		
 		
-		return lookupTableR[intNumWaterLocation+1]-1;
+		return lookupTableR[intNumWaterLocation+1]-1; //cutting the end point
 	
 	}
 	

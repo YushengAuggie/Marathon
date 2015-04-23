@@ -14,8 +14,9 @@ public class main {
 	
 	public static void main(String[] args) {
 	
-		String inputfilepath = "..\\marathonRunner\\IOFile\\input1.txt";
+		String inputfilepath = "..\\marathonRunner\\IOFile\\input.txt";
 		String outputfilepath = "..\\marathonRunner\\IOFile\\output.txt";
+
 		getInput ob =new getInput();		
 		ob = ob.getInputFuc(inputfilepath);
 		ob.printInfo();
@@ -43,6 +44,17 @@ public class main {
 			} //test`
 		
 		outputFile output = new outputFile(outputfilepath,numStops,stopWaterLocation);
+		
+		
+		//----------------Greedy_Sulotion-------------------------------------------
+		
+		String GreedyOutPut = "..\\marathonRunner\\IOFile\\Greedyoutput.txt";
+		greedyChoiceMarathon GreedyObject =new greedyChoiceMarathon(ob);
+		int numGreedyStops = GreedyObject.Greedy_Marathon(0);
+		System.out.println(numGreedyStops);
+		System.out.println(GreedyObject.waterLocation);
+		outputFile GreedyOutput = new outputFile(GreedyOutPut, numGreedyStops, GreedyObject.waterLocation);
+		//-----------------Greedy_Sulotion-------------------------------------------
 			
 	}
 
