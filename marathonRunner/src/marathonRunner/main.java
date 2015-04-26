@@ -47,7 +47,8 @@ public class main {
 		
 		
 		//----------------Greedy_Sulotion-------------------------------------------
-		
+		System.out.println("\n");
+		System.out.println("Greedy Solution");
 		String GreedyOutPut = "..\\marathonRunner\\IOFile\\Greedyoutput.txt";
 		greedyChoiceMarathon GreedyObject =new greedyChoiceMarathon(ob);
 		int numGreedyStops = GreedyObject.Greedy_Marathon(0);
